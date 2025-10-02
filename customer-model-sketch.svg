@@ -1,0 +1,53 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">Customer Data Model</text>
+  
+  <!-- Main Model Box -->
+  <rect x="150" y="60" width="300" height="280" fill="#ffffff" stroke="#3b82f6" stroke-width="3" rx="10"/>
+  
+  <!-- Model Title -->
+  <rect x="150" y="60" width="300" height="50" fill="#3b82f6" rx="10"/>
+  <rect x="150" y="85" width="300" height="25" fill="#3b82f6"/>
+  <text x="300" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">Customer</text>
+  
+  <!-- Attributes -->
+  <g font-family="Arial, sans-serif" font-size="14">
+    <!-- Name -->
+    <rect x="170" y="130" width="260" height="30" fill="#f1f5f9" stroke="#cbd5e1" rx="5"/>
+    <text x="180" y="150" font-weight="bold" fill="#475569">name:</text>
+    <text x="230" y="150" fill="#64748b">String</text>
+    <text x="350" y="150" fill="#ef4444" font-size="12">required</text>
+    
+    <!-- Date of Birth -->
+    <rect x="170" y="170" width="260" height="30" fill="#f1f5f9" stroke="#cbd5e1" rx="5"/>
+    <text x="180" y="190" font-weight="bold" fill="#475569">dateOfBirth:</text>
+    <text x="280" y="190" fill="#64748b">Date</text>
+    <text x="350" y="190" fill="#ef4444" font-size="12">required</text>
+    
+    <!-- Member Number -->
+    <rect x="170" y="210" width="260" height="30" fill="#f1f5f9" stroke="#cbd5e1" rx="5"/>
+    <text x="180" y="230" font-weight="bold" fill="#475569">memberNumber:</text>
+    <text x="300" y="230" fill="#64748b">Number</text>
+    <text x="180" y="245" fill="#8b5cf6" font-size="11">enum: [1, 2, 3, 4]</text>
+    
+    <!-- Interests -->
+    <rect x="170" y="250" width="260" height="30" fill="#f1f5f9" stroke="#cbd5e1" rx="5"/>
+    <text x="180" y="270" font-weight="bold" fill="#475569">interests:</text>
+    <text x="250" y="270" fill="#64748b">String</text>
+    <text x="350" y="270" fill="#ef4444" font-size="12">required</text>
+  </g>
+  
+  <!-- Examples Box -->
+  <rect x="50" y="360" width="500" height="30" fill="#ecfdf5" stroke="#10b981" stroke-width="1" rx="5"/>
+  <text x="60" y="378" font-family="Arial, sans-serif" font-size="12" fill="#065f46">
+    Examples: name: "John Doe", dateOfBirth: "1990-05-15", memberNumber: 2, interests: "movies, football, gym, gaming"
+  </text>
+  
+  <!-- Mongoose Icon -->
+  <circle cx="480" cy="140" r="25" fill="#47a248"/>
+  <text x="480" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">M</text>
+  <text x="480" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#47a248">Mongoose</text>
+</svg>

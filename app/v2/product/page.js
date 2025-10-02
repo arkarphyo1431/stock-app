@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
 
 export default function Home() {
@@ -14,17 +14,17 @@ export default function Home() {
     // TODO
   }
 
-  async function fetchProducts() {
+  const fetchProducts = useCallback(async () => {
     const data = await fetch(`${APIBASE}/product`);
     const p = await data.json();
     setProducts(p);
-  }
+  }, [APIBASE]);
 
-  async function fetchCategory() {
+  const fetchCategory = useCallback(async () => {
     const data = await fetch(`${APIBASE}/category`);
     const c = await data.json();
     setCategory(c);
-  }
+  }, [APIBASE]);
 
   const createProduct = (data) => {
     fetch(`${APIBASE}/product`, {
@@ -48,7 +48,7 @@ export default function Home() {
   useEffect(() => {
     fetchCategory();
     fetchProducts();
-  }, []);
+  }, [fetchCategory, fetchProducts]);
 
   return (
     <>

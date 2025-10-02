@@ -174,7 +174,7 @@ export default function AddCustomerPage() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
                   placeholder="e.g., Sports, Technology, Travel, Reading, Music..."
                 />
-                <p className="mt-2 text-sm text-gray-500">Optional: List customer's interests or hobbies</p>
+                <p className="mt-2 text-sm text-gray-500">Optional: List customer&apos;s interests or hobbies</p>
               </div>
             </div>
 

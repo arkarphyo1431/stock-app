@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function Home() {
   const API_BASE = process.env.NEXT_PUBLIC_API_URL;
@@ -10,18 +10,18 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
 
-  async function fetchProducts() {
+  const fetchProducts = useCallback(async () => {
     const data = await fetch(`${API_BASE}/product`);
     // const data = await fetch(`http://localhost:3000/product`);
     const p = await data.json();
     setProducts(p);
-  }
+  }, [API_BASE]);
 
-  async function fetchCategory() {
+  const fetchCategory = useCallback(async () => {
     const data = await fetch(`${API_BASE}/category`);
     const c = await data.json();
     setCategory(c);
-  }
+  }, [API_BASE]);
 
   const createProduct = (data) => {
     fetch(`${API_BASE}/product`, {
@@ -45,7 +45,7 @@ export default function Home() {
   useEffect(() => {
     fetchCategory();
     fetchProducts();
-  }, []);
+  }, [fetchCategory, fetchProducts]);
 
   return (
     <div className="flex flex-row gap-4">

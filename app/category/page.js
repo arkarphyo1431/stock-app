@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { DataGrid } from "@mui/x-data-grid";
@@ -30,7 +30,7 @@ export default function Home() {
   const [editMode, setEditMode] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
-  async function fetchCategory() {
+  const fetchCategory = useCallback(async () => {
     const data = await fetch(`${API_BASE}/category`);
     const c = await data.json();
     const c2 = c.map((category) => {
@@ -40,11 +40,11 @@ export default function Home() {
       }
     })
     setCategoryList(c2);
-  }
+  }, [API_BASE]);
 
   useEffect(() => {
     fetchCategory();
-  }, []);
+  }, [fetchCategory]);
 
   function handleCategoryFormSubmit(data) {
     if (editMode) {
