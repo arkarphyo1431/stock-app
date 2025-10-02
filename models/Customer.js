@@ -4,13 +4,13 @@ const customerSchema = new mongoose.Schema({
   name: { type: String, required: true },
   dateOfBirth: { type: Date, required: true },
   memberNumber: { 
-    type: Number, 
+    type: String, 
     required: true,
-    enum: [1, 2, 3, 4]
+    unique: true
   },
-  interests: { type: String, required: true }
-});
+  interests: [String]
+}, { collection: 'Customer' });
 
-const Customer = mongoose.models.customer || mongoose.model("customer", customerSchema);
+const Customer = mongoose.models.Customer || mongoose.model("Customer", customerSchema);
 
 export default Customer;

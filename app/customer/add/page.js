@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/fin-customer';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
 
 export default function AddCustomerPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,7 +56,7 @@ export default function AddCustomerPage() {
               <p className="mt-1 text-sm text-gray-500">Create a new customer profile</p>
             </div>
             <Link 
-              href="/fin-customer/customer"
+              href="/customer"
               className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
             >
               ← Back to Customers
@@ -203,7 +203,7 @@ export default function AddCustomerPage() {
             {/* Action Buttons */}
             <div className="mt-8 flex justify-end space-x-4">
               <Link
-                href="/fin-customer/customer"
+                href="/customer"
                 className="px-6 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 Cancel

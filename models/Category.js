@@ -1,4 +1,3 @@
-import { MoneyOffCsredRounded } from "@mui/icons-material";
 import mongoose from "mongoose";
 
 const categorySchema = new mongoose.Schema({
@@ -6,9 +5,10 @@ const categorySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  description: String,
   order: Number
-});
+}, { collection: 'category' });
 
-const Category = mongoose.models.category || mongoose.model("category", categorySchema);
+const Category = mongoose.models.Category || mongoose.model("Category", categorySchema);
 
 export default Category;
