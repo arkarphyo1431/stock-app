@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams, useRouter } from 'next/navigation';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/fin-customer';
 
 export default function EditCustomerPage() {
   const [customer, setCustomer] = useState(null);
@@ -140,13 +140,13 @@ export default function EditCustomerPage() {
             </div>
             <div className="flex space-x-3">
               <Link 
-                href={`/customer/${params.id}`}
+                href={`/fin-customer/customer/${params.id}`}
                 className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
                 ← Back to Details
               </Link>
               <Link 
-                href="/customer"
+                href="/fin-customer/customer"
                 className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
                 All Customers
@@ -338,7 +338,7 @@ export default function EditCustomerPage() {
               {/* Form Actions */}
               <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
                 <Link
-                  href={`/customer/${params.id}`}
+                  href={`/fin-customer/customer/${params.id}`}
                   className="px-6 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   Cancel

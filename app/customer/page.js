@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/fin-customer';
 
 export default function CustomerPage() {
   const [customers, setCustomers] = useState([]);
@@ -106,7 +106,7 @@ export default function CustomerPage() {
             </div>
             <div className="flex space-x-3">
               <Link 
-                href="/"
+                href="/fin-customer/"
                 className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
                 ← Back to Home
@@ -257,13 +257,13 @@ export default function CustomerPage() {
                       </div>
                       <div className="flex items-center space-x-2 ml-4">
                         <Link
-                          href={`/customer/${customer._id}`}
+                          href={`/fin-customer/customer/${customer._id}`}
                           className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
                         >
                           View
                         </Link>
                         <Link
-                          href={`/customer/edit/${customer._id}`}
+                          href={`/fin-customer/customer/edit/${customer._id}`}
                           className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                         >
                           Edit

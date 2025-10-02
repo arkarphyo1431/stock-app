@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    instrumentationHook: true,
-  },
+  basePath: '/fin-customer',
+  assetPrefix: '/fin-customer',
+  trailingSlash: true,
 };
 
 export default nextConfig;
